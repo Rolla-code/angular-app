@@ -1,25 +1,32 @@
-<h2>Products</h2>
+<div class="container-fluid p-4" style="background-color: #DFEBDB;">
+  <div class="row text-center p-4">
+    <h2>Products</h2>
+  </div>
 
-<div *ngFor="let product of myProducts">
+  <div class="row align-items-center">
+    <div class="col-4" *ngFor="let product of products">
+      <div class="card text-center" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title ">
+            <a [title] = "product.name + ' details'" [routerLink]="['/products', product.id]" style="text-decoration: none; color: #119744;">
+              {{product.name}}
+            </a>
+          </h5>
+          <p class="card-text" *ngIf="product.description">Description: {{product.description}}</p>
+        </div>
+        <div class="card-body">
+          <div class="row">
 
-    <h3>
-        <a [title]="product.name + ' details'"
-        [routerLink]="['/products', product.id]">
-            {{product.name}}
-        </a>
-    </h3>
-
-    <p *ngIf="product.description">
-        Description: {{product.description}}
-    </p>
-
-    <button (click)="share()">
-        Share
-    </button>
-
-    <app-product-alerts
-    [prod]="product" 
-    (notify)="onNotify()">
-    </app-product-alerts>
+          </div>
+          <button type="button" class="btn mb-3" (click)="share()" style="background-color: #DFEBDB;">Share</button>
+          <app-product-alerts [product]="product" (notify)="onNotify()" ></app-product-alerts>
+<!--          <a href="#" class="card-link">Card link</a>-->
+<!--          <a href="#" class="card-link">Another link</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
+
+

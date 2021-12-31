@@ -4,5 +4,10 @@
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
-  <button (click)="addToCart(product)">Buy</button>
+  <button type="button" class="btn mb-3" (click)="addToCart(product)" style="background-color: #DFEBDB;">
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    Add
+  </button>
 </div>
+
+

@@ -1,7 +1,35 @@
-<a [routerLink]="['/']">
-    <h1>My Store</h1>
-</a>
-  
-<a routerLink="/cart" class="button fancy-button">
-    <i class="material-icons">shopping_cart</i>Checkout
-</a>
+<!-- Navbar -->
+<div class="row">
+  <div class="text-center bg text-white p-2">Welcome to Rolla-Mart : Your Dream Online Store</div>
+</div>
+
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a style="color: #119744" routerLink="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-decoration-none">
+      <span style="font-weight: bold"> Rolla-Mart </span>
+    </a>
+
+    <div class="col-md-3 text-end">
+      <a type="button" class="btn btn-light text-dark position-relative float-end" routerLink="/cart">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        Checkout
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success m-1">
+            {{cartItems}}
+<!--            <span class="visually-hidden">items in cart</span>-->
+          </span>
+      </a>
+    </div>
+  </header>
+</div>
+
+<div class="container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active"><a routerLink="/">Home</a></li>
+<!--      <li class="breadcrumb-item active" aria-current="page">Library</li>-->
+    </ol>
+  </nav>
+</div>
+
+
+
